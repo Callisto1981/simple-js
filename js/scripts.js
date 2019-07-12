@@ -20,5 +20,5 @@ var blastoiseTypes = 'water';
 var blastoise = {
   name: 'Blastoise',
   height: 1.6,
-  types: 'water'
+  types: 'wate'
 };
