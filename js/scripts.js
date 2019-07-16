@@ -22,7 +22,7 @@ var blastoise = {
   height: 1.6,
   types: 'wate'
 };
-//just creating a basic outline for step 4.//
- for (var i = 0; i <= 2; i++) {
-   console.log(i);
+
+ for (var i = 0; i < repository.length; i++) {
+   document.write(repository[i]);
  }
