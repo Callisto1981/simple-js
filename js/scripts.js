@@ -1,4 +1,4 @@
-var repository = [Bulbasaur,Charizard,Blastoise]
+var repository = [bulbasaur,charizard,blastoise]
 
 var bulbasaurHeight = 7;
 var bulbasaurTypes = 'grass';
