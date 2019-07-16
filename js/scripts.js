@@ -15,6 +15,7 @@ var charizard = {
   height: 1.7,
   types: 'fire','flying'
 };
+
 var blastoiseHeight = 1.6;
 var blastoiseTypes = 'water';
 var blastoise = {
