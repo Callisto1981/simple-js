@@ -24,5 +24,5 @@ var blastoise = {
 };
 
  for (var i = 0; i < repository.length; i++) {
-   document.write(repository[i]);
+   document.write(bulbasaur[repository]);
  }
