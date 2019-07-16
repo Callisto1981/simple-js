@@ -20,9 +20,9 @@ var blastoiseTypes = 'water';
 var blastoise = {
   name: 'Blastoise',
   height: 1.6,
-  types: 'wate'
+  types: 'water'
 };
 
  for (var i = 0; i < repository.length; i++) {
-   document.write(repository[i]);
+   document.write(repository[i].name);
  }
