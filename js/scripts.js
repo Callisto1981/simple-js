@@ -1,4 +1,4 @@
-var repository = [bulbasaur,charizard,blastoise]
+var repository = [bulbasaur, charizard, blastoise];
 
 var bulbasaurHeight = 7;
 var bulbasaurTypes = 'grass';
@@ -8,8 +8,8 @@ var bulbasaur = {
   types: 'grass','poison'
 };
 
-var charizarHeight = 1.7;
-var charizarTypes = 'fire','flying';
+var charizardHeight = 1.7;
+var charizardTypes = 'fire','flying';
 var charizard = {
   name: 'Charizard',
   height: 1.7,
