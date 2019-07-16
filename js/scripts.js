@@ -23,6 +23,6 @@ var blastoise = {
   types: 'water'
 };
 
- for (var i = 0; i < repository.length; i++) {
-   document.write(repository[i].name);
- }
+for (var i = 0; i < repository.length; i++) {
+  document.write(repository[i].name);
+}
