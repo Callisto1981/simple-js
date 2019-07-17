@@ -1,5 +1,3 @@
-var repository = [bulbasaur, charizard, blastoise];
-
 var bulbasaur = {
   name: 'Bulbasaur',
   height: 7,
@@ -17,6 +15,8 @@ var blastoise = {
   height: 1.6,
   types: 'water'
 };
+
+var repository = [bulbasaur, charizard, blastoise];
 
 for (var i = 0; i < repository.length; i++) {
   document.write(repository[i].name);
