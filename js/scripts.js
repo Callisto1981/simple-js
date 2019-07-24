@@ -1,37 +1,26 @@
+
 var bulbasaur = {
   name: 'Bulbasaur',
   height: 7,
-  types:['grass','poison']
+  types:["Grass","Poison"]
 };
 
 var charizard = {
   name: 'Charizard',
   height: 1.7,
-  types:['fire','flying']
+  types:["Fire","Flying"]
 };
 
 var blastoise = {
   name: 'Blastoise',
   height: 1.6,
-  types:['water']
+  types:["Water"]
 };
 
 var repository = [bulbasaur,charizard,blastoise];
 
 for (var i = 0; i <repository.length; i++) {
-  document.write('<p>'+repository[0].name.+'</p>');
-  document.write('<p>'+repository[0].height+'</p>')
-  break
-}
-
-for (var i = 0; i <repository.length; i++) {
-  document.write('<p>'+repository[1].name+'</p>');
-  document.write('<p>'+repository[1].height+'</p>')
-  break
-}
-
-for (var i = 0; i <repository.length; i++) {
-  document.write('<p>'+repository[2].name+'</p>');
-  document.write('<p>'+repository[2].height+'</p>')
-  break
+  document.write('<p>Name: '+repository[i].name+'</p>');
+  document.write('<p>Height: '+repository[i].height+'</p>');
+  document.write('<p>Type: '+repository[i].types+'</p>')
 }
