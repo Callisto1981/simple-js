@@ -18,9 +18,6 @@ var blastoise = {
 };
 
 var repository = [bulbasaur,charizard,blastoise];
-
-for (var i = 0; i <repository.length; i++) {
-  document.write('<p>Name: '+repository[i].name+'</p>');
-  document.write('<p>Height: '+repository[i].height+'</p>');
-  document.write('<p>Type: '+repository[i].types+'</p>')
-}
+repository.forEach(function(currentName){
+  document.write(currentName);
+});
