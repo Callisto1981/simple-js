@@ -37,6 +37,9 @@ repository.forEach(function(poke){
   document.write("<p>" + poke.types + "</p>");
 });
 
-document.write(pokemonRepository.getAll());
+for (var i = 0; i <repository.length; i++) {
+document.write(pokemonRepository.getAll);
+};
+
 pokemonRepository.add({ name: 'Pikachu' });
 document.write(pokemonRepository.getAll());
