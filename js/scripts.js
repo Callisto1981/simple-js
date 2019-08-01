@@ -17,7 +17,7 @@ var blastoise = {
   types:["Water"]
 };
 
-var allPokes = (pokemonRepository.getAll() {
+var allPokes = pokemonRepository.getAll() {
   var repository = [bulbasaur,charizard,blastoise];
 
   return {
@@ -28,7 +28,7 @@ var allPokes = (pokemonRepository.getAll() {
       return repository;
     }
   };
-})();
+}();
 
 
 allPokes.forEach(function(poke){
