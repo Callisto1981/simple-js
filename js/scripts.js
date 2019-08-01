@@ -17,7 +17,7 @@ var blastoise = {
   types:["Water"]
 };
 
-var pokemonRepository = (function () {
+var allPokes = pokemonRepository.getAll() {
   var repository = [bulbasaur,charizard,blastoise];
 
   return {
@@ -31,15 +31,8 @@ var pokemonRepository = (function () {
 })();
 
 
-repository.forEach(function(poke){
+allPokes.forEach(function(poke){
   document.write("<h1>" + poke.name + "</h1>");
   document.write("<p>" + poke.height + "</p>");
   document.write("<p>" + poke.types + "</p>");
 });
-
-for (var i = 0; i <repository.length; i++) {
-document.write(pokemonRepository.getAll);
-};
-
-pokemonRepository.add({ name: 'Pikachu' });
-document.write(pokemonRepository.getAll());
