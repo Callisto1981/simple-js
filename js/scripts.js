@@ -18,7 +18,7 @@ var blastoise = {
 };
 
 var pokemonRepository = (function)() {
-  var repository = [bulbasaur,charizard,blastoise];
+  var repository = ['bulbasaur','charizard','blastoise'];
 
   return {
     add: function(pokemon) {
