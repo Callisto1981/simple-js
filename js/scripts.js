@@ -1,5 +1,5 @@
 var pokemonRepository = (function () {
-  var repository = ['bulbasaur','charizard','blastoise'];
+  var repository = [bulbasaur, charizard, blastoise];
   var bulbasaur = {
     name: 'Bulbasaur',
     height: 7,
@@ -15,7 +15,7 @@ var pokemonRepository = (function () {
     height: 1.6,
     types:['Water']
   };
-};
+}
 
 function add(pokemon) {
   if (
