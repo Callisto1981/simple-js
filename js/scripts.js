@@ -1,4 +1,5 @@
-var bulbasaur = {
+//lines 2 through 16 are the "hard coded pokemon"?
+/*var bulbasaur = {
   name: 'Bulbasaur',
   height: 7,
   types:['Grass','Poison']
@@ -12,24 +13,10 @@ var blastoise = {
   name: 'Blastoise',
   height: 1.6,
   types:['Water']
-};
-
+};*/
+var apiUrl = ('http://pokeapi.co/api/v2/pokemon/ditto/')
 var pokemonRepository = (function () {
   var repository = []
-/*function loadList(){
-  var pokemonList = fetch('https://pokeapi.co/api/v2/pokemon/');
-  pokemonList.then(function(result){
-  result.json().then(function(jsonResults){
-    jsonResults.results.forEach(function(pokemon){
-      add(pokemon);
-    })
-    console.log(jsonResults)
-  })
-  })
-.catch(function(error){
-  console.log(error)
-})
-}*/
 
 function loadList(item) {
     return fetch(apiUrl).then(function (response) {
@@ -50,12 +37,6 @@ function loadList(item) {
 
 
   function add(pokemon) {
-    /*if (
-      typeof pokemon === 'object' &&
-      'name' in pokemon &&
-      'height' in pokemon &&
-      'types' in pokemon
-    ) {*/
     repository.push(pokemon)
     /*repository[pokemon.name] = pokemon
   }*/
@@ -79,16 +60,6 @@ function loadDetails(item) {
   });
 }
 
-/*function loadDetails(pokemonObject){
-  var pokemonDetails = fetch('https://pokeapi.co/api/v2/pokemon' + pokemonObject.name)
-  pokemonDetails.then(function(result){
-    result.json().then(function(jsonResults){
-      repository[pokemonObject.name]
-    })
-  })
-}*/
-
-
   function addListItem(pokemon = {}) {
     var pokemonList = document.querySelector('.pokemon_list');
     var $listItem = document.createElement('li');
@@ -103,55 +74,12 @@ function loadDetails(item) {
     });
   };
 
-  function showDetails(item) {
+  function showDetails(pokemon) {
     pokemonRepository.loadDetails(item).then(function () {
-      showModal(item);
+    console.log = (item);
     });
   }
-/*I did copy lines 113 to 146 because now I realize this is one of the
-codes I've been missing*/
-  function showModal(item) {
-      var $modalContainer = document.querySelector('#modal-container');
 
-      $modalContainer.innerHTML = '';
-
-      var modal = document.createElement('div');
-      modal.classList.add('modal');
-
-      var closeButtonElement = document.createElement('button');
-      closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
-      closeButtonElement.addEventListener('click', hideModal);
-
-      var nameElement = document.createElement('h1');
-      nameElement.innerText = item.name;
-
-      var imageElement = document.createElement('img');
-      imageElement.classList.add('modal-img');
-      imageElement.setAttribute('src', item.imageUrl);
-
-      var heightElement = document.createElement('p');
-      heightElement.innerText = 'height : ' + item.height;
-
-      var typesElement = document.createElement('p');
-      typesElement.innerText = 'weight : ' + item.weight;
-
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(nameElement);
-      modal.appendChild(imageElement);
-      modal.appendChild(heightElement);
-      modal.appendChild(typesElement);
-      $modalContainer.appendChild(modal);
-      $modalContainer.classList.add('is-visible');
-  }
-
-  function hideModal() {
-    var $modalContainer = document.querySelector('#modal-container');
-    $modalContainer.classList.remove('is-visibile');
-  }
-
-/*I did copy lines 155 to 163 because now I realize this is one of then
-codes I've been missing*/
   window.addEventListener('keydown', (e) => {
     var $modalContainer = document.querySelector('#modal-container');
 
@@ -184,15 +112,10 @@ return {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showModal: showModal,
-    hideModal: hideModal
   };
 });
 
-
-var pokeapi = pokemonRepository()
-//console.log(pokeapi.getAll());
-pokeapi.add({ name: 'Pikachu', height: 0.3, types: ['electric'] });
+//pokeapi.add({ name: 'Pikachu', height: 0.3, types: ['electric'] });
 //console.log(pokeapi.getAll());
 pokemonRepository.loadList().then(function() {
 pokemonRepository.getAll().forEach(function (item) {
