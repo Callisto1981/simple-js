@@ -1,19 +1,4 @@
-//lines 2 through 16 are the "hard coded pokemon"?
-/*var bulbasaur = {
-  name: 'Bulbasaur',
-  height: 7,
-  types:['Grass','Poison']
-};
-var charizard = {
-  name: 'Charizard',
-  height: 1.7,
-  types:['Fire','Flying']
-};
-var blastoise = {
-  name: 'Blastoise',
-  height: 1.6,
-  types:['Water']
-};*/
+
 var apiUrl = ('http://pokeapi.co/api/v2/pokemon/ditto/')
 var pokemonRepository = (function () {
   var repository = []
@@ -79,32 +64,6 @@ function loadDetails(item) {
     console.log = (item);
     });
   }
-
-  window.addEventListener('keydown', (e) => {
-    var $modalContainer = document.querySelector('#modal-container');
-
-    if (
-      e.key === 'Escape' && $modalContainer.classList.contains('is-visible')
-    ) {
-      hideModal();
-    }
-  });
-
-  // Hides modal if clicked outside of it
-  var $modalContainer = document.querySelector('#modal-container');
-  $modalContainer.addEventListener('click', e => {
-    var target = e.target;
-    if (target === $modalContainer) {
-      hideModal();
-    }
-  });
-
-
-//instructions 3.2
-var pokeList = {
-  pokemon: pokemon.name,
-  detailsUrl: pokemon.url
-};
 
 return {
     add: add,
