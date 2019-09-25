@@ -1,5 +1,5 @@
 
-var apiUrl = ('http://pokeapi.co/api/v2/pokemon/ditto/')
+var apiUrl = ('https://pokeapi.co/api/v2/pokemon/')
 var pokemonRepository = (function () {
   var repository = []
 
@@ -31,7 +31,7 @@ function loadList(item) {
     return repository;
   }
 
-function loadDetails(item) {
+function loadDetails(pokemon) {
   var url = item.detailsUrl;
   return fetch(url).then(function (response) {
     return response.json();
@@ -60,8 +60,8 @@ function loadDetails(item) {
   };
 
   function showDetails(pokemon) {
-    pokemonRepository.loadDetails(item).then(function () {
-    console.log = (item);
+    loadDetails(item).then(function () {
+    console.log(pokemon);
     });
   }
 
@@ -76,8 +76,9 @@ return {
 
 //pokeapi.add({ name: 'Pikachu', height: 0.3, types: ['electric'] });
 //console.log(pokeapi.getAll());
-pokemonRepository.loadList().then(function() {
-pokemonRepository.getAll().forEach(function (item) {
-  pokemonRepository.addListItem(item);
+const poke = pokemonRepository();
+poke.loadList().then(function() {
+poke.getAll().forEach(function (item) {
+  poke.addListItem(item);
 });
 });
