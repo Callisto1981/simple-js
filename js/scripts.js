@@ -23,8 +23,6 @@ function loadList(item) {
 
   function add(pokemon) {
     repository.push(pokemon)
-    /*repository[pokemon.name] = pokemon
-  }*/
   }
 
   function getAll() {
@@ -36,10 +34,10 @@ function loadDetails(pokemon) {
   return fetch(url).then(function (response) {
     return response.json();
   }).then(function (details) {
-    item.imageUrl = details.sprites.front_default;
-    item.height = details.height;
-    item.types = Object.keys(details.types);
-    item.weight = details.weight;
+    pokemon.imageUrl = details.sprites.front_default;
+    pokemon.height = details.height;
+    pokemon.types = Object.keys(details.types);
+    pokemon.weight = details.weight;
   }).catch(function (e) {
     console.error(e);
   });
@@ -73,6 +71,9 @@ return {
     loadDetails: loadDetails,
   };
 });
+
+
+
 
 //pokeapi.add({ name: 'Pikachu', height: 0.3, types: ['electric'] });
 //console.log(pokeapi.getAll());
