@@ -1,23 +1,32 @@
-function showModal() {
+function showModal(pokemon) {
   var $modalContainer = document.querySelector('#modal-container');
 
-  $modal = document.createElement('div');
+  $modalContainer.innerHTML = '';
+
+  var modal = document.createElement('div');
   modal.classList.add('modal');
+
+  var name = document.createElement('h1');// Name in Modal
+  nameElement.innerText = pokemon.name;
+
+  var heightElement = document.createElement('p');//height in model
+  heightElement.innerText = 'height: ' +  pokemon.height;
+
+  var imageElement = document.createElement('img'); //image in modal
+  image.setAttribute('src', pokemon.imageUrl);
+
+
 
   var closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
   closeButtonElement.innerText = 'Close';
   closeButtonElement.addEventListener('click', hideModal);
 
-  var titleElement = document.createElement('h1');
-  titleElement.innerText = title;
-
-  var contentElement = document.createElement('p');
-  contentElement.innerText = text;
-
   modal.appendChild(closeButtonElement);
-  modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
+  modal.appendChild(nameElement);
+  modal.appendChild(heightElement);
+  modal.appendChild(imageElement);
+
   $modalContainer.appendChild(modal);
 
   $modalContainer.classList.add('is-visible');
@@ -40,6 +49,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+var $modalContainer = document.querySelector('.pokemon-list');
 $modalContainer.addEventListener('click', (e) => {
   var target = e.target;
   if(target === $modalContainer) {
