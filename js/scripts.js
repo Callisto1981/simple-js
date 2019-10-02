@@ -46,7 +46,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-var $modalContainer = document.querySelector('.pokemon-list');
+var $modalContainer = document.querySelector('.pokemon_list');
 $modalContainer.addEventListener('click', (e) => {
   var target = e.target;
   if(target === $modalContainer) {
