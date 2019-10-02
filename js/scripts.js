@@ -32,7 +32,7 @@ function showModal(pokemon) {
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
 
-function hideModal() {
+function hideModal(pokemon) {
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.remove('is-visible');
 };
