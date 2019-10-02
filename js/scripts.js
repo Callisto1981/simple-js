@@ -1,8 +1,6 @@
 /*------------------- FUNCTION TO SHOW MODAL ------------------*/
-var $modalContainer = document.querySelector('#modal-container');
-
 function showModal(pokemon) {
-
+  var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.innerHTML = ' ';
 
   var modal = document.createElement('div');
