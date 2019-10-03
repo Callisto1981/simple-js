@@ -1,9 +1,9 @@
 /*------------------- FUNCTION TO SHOW MODAL ------------------*/
-function showModal(title, text) {// pokemon
+function showModal(pokemon) {// pokemon
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.add('is-visible');
 
-  $modalContainer.innerHTML = ' ';
+  $modalContainer.innerHTML = '';
 
   var modal = document.createElement('div');
   modal.classList.add('modal');
@@ -20,7 +20,7 @@ function showModal(title, text) {// pokemon
   heightElement.innerText = 'height: ' +  pokemon.height;
 
   var imageElement = document.createElement('img'); //image in modal
-  image.setAttribute('src', pokemon.imageUrl);
+  imageElement.setAttribute('src', pokemon.url);
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(nameElement);
@@ -34,7 +34,7 @@ function showModal(title, text) {// pokemon
 }
 
 document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('name', 'This is the modal content!');
+  showModal('pokemon', 'This is the modal content!');
 });
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
@@ -44,10 +44,10 @@ function hideModal(/*pokemon*/) {
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.remove('is-visible');
 
-  if (dialogPromiseReject) {
+  /*if (dialogPromiseReject) {
     dialogPromiseReject();
     dialogPormiseReject = null;
-  }
+  }*/
 };
 
 
@@ -68,7 +68,7 @@ $modalContainer.addEventListener('click', (e) => {
 });
 /*-------------------------------------------------------------*/
 
-function showDialog(title, text) {
+/*function showDialog(title, text) {
   showModal(title. text);
 
   var modal = $modalContainer.querySelector('.modal');
@@ -94,7 +94,7 @@ function showDialog(title, text) {
       reject();
     });
 
-    dialogPormiseReject = reject;
+    dialogPromiseReject = reject;
   });
 }
 
@@ -104,7 +104,7 @@ document.querySelector('#show-dialog').addEventListener('click', () => {
   }, () => {
     alert('not confirmed');
   });
-});
+});*/
 
 
 
