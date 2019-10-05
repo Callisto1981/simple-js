@@ -14,13 +14,13 @@ function showModal(pokemon) {// pokemon
   closeButtonElement.addEventListener('click', hideModal);
 
   var nameElement = document.createElement('h1');// Name in Modal
-  nameElement.innerText = 'name: ' +  pokemon.name;
+  nameElement.innerText = 'name: ', +  pokemon.name;
 
   var heightElement = document.createElement('p');//height in model
-  heightElement.innerText = 'height: ' +  pokemon.height;
+  heightElement.innerText = 'height: ', +  pokemon.height;
 
   var imageElement = document.createElement('img'); //image in modal
-  imageElement.setAttribute('src', pokemon.url);
+  imageElement.setAttribute = 'src', + pokemon.url;
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(nameElement);
@@ -33,12 +33,12 @@ function showModal(pokemon) {// pokemon
   //console.log('modal', $modalContainer);
 }
 
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('pokemon', 'This is the modal content!');
+document.querySelector('#show-modal').addEventListener('click', (showModal) => {
+  showModal(pokemon.nameElement);
 });
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
-var dialogPormiseReject; //This can be set later
+//var dialogPormiseReject; //This can be set later
 
 function hideModal(/*pokemon*/) {
   var $modalContainer = document.querySelector('#modal-container');
