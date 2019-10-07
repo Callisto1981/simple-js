@@ -1,13 +1,30 @@
-.pokedex{
+.pokemon_list{
   border: 2px blue solid;
   height: 50px;
   margin-bottom: 10px;
+  list-style-type: none;
 }
 
 
 html,
 body {
   font-family: Arial, sans-serif;
+}
+
+.pokemonButton,
+.modalButton {
+  /*overwrites browser defaults and resets the border*/
+  border: none;
+  display: inline-block;
+  width: 25%;
+  color: #fff;
+  background: #fc9802;
+  padding: 10px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  width: 75%;
 }
 
 #modal-container.is-visibile  {
