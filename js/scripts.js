@@ -38,7 +38,7 @@ document.querySelector('#show-modal').addEventListener('click', (showModal) => {
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
 
-function hideModal() {
+function hideModal(pokemon) {
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.remove('is-visible');
 };
