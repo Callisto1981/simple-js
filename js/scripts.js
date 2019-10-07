@@ -1,8 +1,7 @@
 /*------------------- FUNCTION TO SHOW MODAL ------------------*/
-function showModal(pokemon) {// pokemon
+function showModal(title, height, pokeImage) {// pokemon
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.add('is-visible');
-
   $modalContainer.innerHTML = '';
 
   var modal = document.createElement('div');
@@ -14,13 +13,13 @@ function showModal(pokemon) {// pokemon
   closeButtonElement.addEventListener('click', hideModal);
 
   var nameElement = document.createElement('h1');// Name in Modal
-  nameElement.innerText = 'name: ', +  pokemon.name;
+  nameElement.innerText = title;
 
   var heightElement = document.createElement('p');//height in model
-  heightElement.innerText = 'height: ', +  pokemon.height;
+  heightElement.innerText = height;
 
   var imageElement = document.createElement('img'); //image in modal
-  imageElement.setAttribute = 'src', + pokemon.url;
+  imageElement.src = pokeImage;
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(nameElement);
@@ -34,20 +33,14 @@ function showModal(pokemon) {// pokemon
 }
 
 document.querySelector('#show-modal').addEventListener('click', (showModal) => {
-  showModal(pokemon.nameElement);
+  showModal(title, height);
 });
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
-//var dialogPormiseReject; //This can be set later
 
-function hideModal(/*pokemon*/) {
+function hideModal() {
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.remove('is-visible');
-
-  /*if (dialogPromiseReject) {
-    dialogPromiseReject();
-    dialogPormiseReject = null;
-  }*/
 };
 
 
@@ -67,46 +60,6 @@ $modalContainer.addEventListener('click', (e) => {
   }
 });
 /*-------------------------------------------------------------*/
-
-/*function showDialog(title, text) {
-  showModal(title. text);
-
-  var modal = $modalContainer.querySelector('.modal');
-
-  var confirmButton = document.createElement('button');
-  confirmButton.classList.add('modal-confirm');
-  confirmButton.innerText = 'Confirm';
-
-  var cancelButton = document.createElement('button');
-  cancelButton.classList.add('modal-cancel');
-  cancelButton.innerText = 'Cancel';
-
-  modal.appendChild(confirmButton);
-  modal.appendChild(cancelButton);
-
-  confirmButton.focus();
-
-  return new Promise((resolve, reject) => {
-    cancelButton.addEventListener('click', hideModal)
-    confirmButton.addEventListener('click', () => {
-      dialogPormiseReject = null; // Reset this
-      hideModal();
-      reject();
-    });
-
-    dialogPromiseReject = reject;
-  });
-}
-
-document.querySelector('#show-dialog').addEventListener('click', () => {
-  showDialog('Confirm action', 'Are you sure you want to do this?').then(function() {
-    alert('confirmed!');
-  }, () => {
-    alert('not confirmed');
-  });
-});*/
-
-
 
 var apiUrl = ('https://pokeapi.co/api/v2/pokemon/')
 var pokemonRepository = (function () {
@@ -155,13 +108,13 @@ var pokemonRepository = (function () {
 
   function addListItem(pokemon = {}) {
     var pokemonList = document.querySelector('.pokemon_list');
-    var $listItem = document.createElement('li');
+    var listItem = document.createElement('li');
     var button = document.createElement('button');
 
     button.innerText = pokemon.name;
-    button.classList.add('my_class');
-    $listItem.appendChild(button);
-    pokemonList.appendChild($listItem);
+    button.classList.add('pokemonButton');
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
     button.addEventListener('click', function (event) {
       showDetails(pokemon);
     });
