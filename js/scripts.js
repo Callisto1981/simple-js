@@ -1,5 +1,5 @@
 /*------------------- FUNCTION TO SHOW MODAL ------------------*/
-function showModal(title, height, pokeImage) {// pokemon
+(function showModal(title, height, pokeImage) {// pokemon
   var $modalContainer = document.querySelector('#modal-container');
   $modalContainer.classList.add('is-visible');
   $modalContainer.innerHTML = '';
@@ -30,7 +30,7 @@ function showModal(title, height, pokeImage) {// pokemon
   $modalContainer.classList.add('is-visible');
 
   //console.log('modal', $modalContainer);
-}
+});
 
 /*----------------------------------------------------------*/
 /*----------------- FUNCTION TO HIDE MODAL -----------------*/
