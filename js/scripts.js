@@ -73,8 +73,8 @@ var pokemonRepository = (function () {
         };
         add(pokemon);
       });
-
-    }).catch(function (e) {
+loadList();
+  /*  }).catch(function (e) {
       console.error(e);
     })
   }
@@ -124,7 +124,7 @@ var pokemonRepository = (function () {
       });
       /*console.log(pokemon);
     });*/
-  }
+  /*}
 
   return {
     add: add,
@@ -133,16 +133,16 @@ var pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
   };
-});
+});*/
 
 
 
 
 //pokeapi.add({ name: 'Pikachu', height: 0.3, types: ['electric'] });
 //console.log(pokeapi.getAll());
-const poke = pokemonRepository();
+/*const poke = pokemonRepository();
 poke.loadList().then(function() {
   poke.getAll().forEach(function (item) {
     poke.addListItem(item);
   });
-});
+});*/
